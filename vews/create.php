@@ -30,10 +30,6 @@
 </div>
     
       </nav>
-      <?php
-	  if (count($_POST) != 0)
-        print_r($_POST);
-      ?>
   <form method = "post" action="/create" style="margin-top: 10px" enctype="multipart/form-data">
   <input type="hidden" name="location" value="<?php if(isset($_POST['location'])){ echo $_POST['location'];} ?>">
      <!-- Page items -->
@@ -54,27 +50,45 @@
             </div>
             <input type="text" class="form-control" name = "headler" value="<?php if (!empty($_POST['headler'])) echo $_POST['headler']?>">
           </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Цена</span>
-            </div>
-            <input type="number" class="form-control" name = "zena_post" value="<?php if (!empty($_POST['zena_post'])) echo $_POST['zena_post']?>">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
-            </div>
-            <input type="number" class="form-control" name = "zena_pre" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre'])) echo $_POST['zena_pre']?>">
-          </div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_post" value="<?php if (!empty($_POST['zena_post'])) echo $_POST['zena_post']?>">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_pre" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre'])) echo $_POST['zena_pre']?>">
+			</div><div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_post2" value="<?php if (!empty($_POST['zena_post2'])) echo $_POST['zena_post2']?>">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_pre2" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre2'])) echo $_POST['zena_pre2']?>">
+			</div><div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_pos3" value="<?php if (!empty($_POST['zena_post3'])) echo $_POST['zena_post3']?>">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
+				</div>
+				<input type="number" class="form-control" name = "zena_pre3" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre3'])) echo $_POST['zena_pre3']?>">
+			</div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Дата и время начала *</span>
             </div>
-            <input type="date" class="form-control" name = "data_start" value="<?php if (!empty($_POST['data_start'])) echo $_POST['data_start']?>">
+            <input type="date" class="form-control" name = "date_start" value="<?php if (!empty($_POST['date_start'])) echo $_POST['date_start']?>">
             <input type="time" class="form-control" name = "time_start" value="<?php if (!empty($_POST['time_start'])) echo $_POST['time_start']?>">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Дата и время окончания *</span>
             </div>
-            <input type="date" class="form-control" name = "data_end" value="<?php if (!empty($_POST['data_end'])) echo $_POST['data_end']?>">
+            <input type="date" class="form-control" name = "date_end" value="<?php if (!empty($_POST['date_end'])) echo $_POST['date_end']?>">
             <input type="time" class="form-control" name = "time_end" value="<?php if (!empty($_POST['time_end'])) echo $_POST['time_end']?>">
           </div>
 
@@ -100,6 +114,12 @@
 				  ?>
               </select>
             </div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Адрес *</span>
+				</div>
+				<input type="text" class="form-control" name = "adress" value="<?php if (!empty($_POST['adress'])) echo $_POST['adress']?>">
+			</div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Краткое описание</span>

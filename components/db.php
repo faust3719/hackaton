@@ -26,6 +26,7 @@ class db
 		$db=db::connect();
 		$data=$db->prepare($sql);
 		$data->execute();
+		$value=array();
 		while ($item=$data->fetch(PDO::FETCH_ASSOC)):
 			$value[]=$item;
 		endwhile;
