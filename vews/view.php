@@ -20,22 +20,22 @@
             <button class="navbar-toggler" type = "button" data-toggle="collapse" data-target = "#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="navbar-toggler-icon" aria-expanded="false" aria-label="Toggle navigation"></span></button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent"">
-
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="#about">Описание</a></li>
           <li class="nav-item"><a class="nav-link" href="/serf">Вернуться к серфу</a></li>
         </ul>
-      <div id="about">
+     
+      </div>
+    </div>
+  </nav>
+   <div id="about">
 
         
-
-      </div>
-      </div>
-      </div>
-    </nav>
-
-  
-
+    <?php
+        print_r($data);
+    ?>
+    
+    </div>
       <!-- Подключаем jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Подключаем плагин Popper -->

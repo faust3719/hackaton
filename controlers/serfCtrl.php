@@ -12,7 +12,10 @@ class serfCtrl
   }
   public function viewAct($params)
   {
-    
+    $serf = new Serf();
+    $data = $serf->getSerf($params);
+    include_once(ROOT. '/vews/view.php');
+    return true;  
   }
   public function createAct()
   {
