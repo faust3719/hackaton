@@ -82,4 +82,9 @@ class profileCtrl
 		
 		return true;
 	}
+	
+	public function paysucAct(){
+		echo 'Оплата успешна вы зарегистриваны';		return true;
+		
+	}
 }

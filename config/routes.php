@@ -7,6 +7,7 @@
 				'fastreg' => 'profile/fastreg',
 				'auth' => 'profile/auth',
 				'reg' => 'profile/reg',
+				'paysuc' => 'profile/paysuc',
 				'uservalidation' => 'profile/validate',
 				'' => 'serf/index'
 		);

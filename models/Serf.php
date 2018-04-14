@@ -6,10 +6,10 @@ class Serf
 {
 	public static function getSerf($id = NULL)
 	{
-		/*$id = array_shift($id);
+		$id = array_shift($id);
 		$query = 'SELECT * FROM `hackaton`.`event` WHERE `id` =' . $id;
 		$query = db::dbSelect($query);
-		return $query;*/
+		return $query;
 	}
 	public static function getSerfMap()
 	{
@@ -32,7 +32,7 @@ class Serf
 		$about=htmlspecialchars($_POST['about']);
 		$adress=htmlspecialchars($_POST['adress']);
 		$pipl_num=htmlspecialchars($_POST['pipl_num']);
-		$uploaddir = './image/event/';
+		$uploaddir = '/image/event/';
 		$uploadfile = $uploaddir . basename($_FILES['photo']['name']);
 		move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile);
 		$auth=$_SESSION['auth'];

@@ -13,7 +13,9 @@ class serfCtrl
   public function viewAct($params)
   {
     $serf = new Serf();
-    $data = $serf->getSerf($params);
+    $data = $serf->getSerf($params)[0];
+    $data['count']=db::dbSelect("SELECT COUNT(event) AS count FROM going WHERE event=".$data['id'])[0]['count'];
+    //var_dump($data);die;
     include_once(ROOT. '/vews/view.php');
     return true;
   }
