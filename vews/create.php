@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-      <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script> 
+      <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
  
     <title>Create</title>
   </head>
@@ -31,9 +31,14 @@
     
       </nav>
       <?php
+	  if (count($_POST)!=0)
         print_r($_POST);
       ?>
+<<<<<<< HEAD
   <form method = "post" action="/create" style="margin-top: 10px">
+=======
+  <form method = "post" action="serf/create" style="margin-top: 10px" enctype="multipart/form-data">
+>>>>>>> 8922a04ccc2c952bc6ba6c1a5466c59744a51b30
      <!-- Page items -->
     <div class="container">
        <!-- About items -->
@@ -88,14 +93,14 @@
               </div>
               <select class="custom-select" id="inputGroupSelect01" name ="theme">
                 <option selected>Выберите тематику</option>
-                <option value="1">Мастер-класс</option>
-                <option value="2">Концерт</option>
-                <option value="3">Игра</option>
-                <option value="4">Мероприятие</option>
-                <option value="5">Презентация</option>
-                <option value="6">Выставка</option>
-                <option value="7">Конференция</option>
-                <option value="8">Туризм</option>
+				  <?php
+				  $data = db::dbSelect('SELECT theme.* FROM theme');
+				  foreach ($data as $value):
+				  ?>
+                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+				  <?php
+				  endforeach;
+				  ?>
               </select>
             </div>
           <div class="input-group mb-3">
@@ -107,7 +112,8 @@
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">О мероприятии *</span>
-              <button type ='button' class="btn btn-default" title="Добавить фото"><i class="fas fa-camera"></i></button>
+				<input type="file" name="photo" id="photo" style="display: none" data-filename-placement="inside" title="Выбрать файл" />
+				<button type ='button' class="btn btn-default" title="Добавить фото" onclick="$('#photo').click();"><i class="fas fa-camera"></i></button>
             </div>
             <textarea name="about" class="form-control" style = "width: 100%; height: 40vh" ><?php if (!empty($_POST['about'])) echo $_POST['about']?></textarea>
           </div>
@@ -117,7 +123,7 @@
          <div class="input-group mb-3">
             <div class="input-group">
             <input type="submit" class="btn btn-success" value="Отправить">
-            <a href="/serf" class="btn btn-danger">Отмена</a>
+            <a href="/serf" class="btn btn-danger" style="margin-left: 16px">Отмена</a>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 <?php
 /**
-* 
+*
 */
 class db
 {
 	
-	function connect()
+	static function connect()
 	{
 		$host = '100.124.160.197';
 		$dbname ='hackaton';
@@ -13,12 +13,22 @@ class db
 		$user = 'root';
 		
 		try {
-		    $db = new PDO("mysql:host= $host; dbname = $dbname", $user, $password);
-		  	return $db;
-		} catch (PDOException $e) {
-		    print "Error!: " . $e->getMessage() . "<br/>";
-		    die();
+			$db=new PDO('mysql:host='.$host.';dbname='.$dbname,$user,$password);
+			return $db;
+		} catch (PDOException $e)
+		{
+			print "Error!: " . $e -> getMessage() . "<br/>";
+			die();
 		}
-		
+	}
+	
+	static function dbSelect($sql){
+		$db=db::connect();
+		$data=$db->prepare($sql);
+		$data->execute();
+		while ($item=$data->fetch(PDO::FETCH_ASSOC)):
+			$value[]=$item;
+		endwhile;
+		return $value;
 	}
 }
