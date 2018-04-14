@@ -31,10 +31,11 @@
     
       </nav>
       <?php
-	  if (count($_POST)!=0)
+	  if (count($_POST) != 0)
         print_r($_POST);
       ?>
   <form method = "post" action="/create" style="margin-top: 10px" enctype="multipart/form-data">
+  <input type="hidden" name="location" value="<?php if(isset($_POST['location'])){ echo $_POST['location'];} ?>">
      <!-- Page items -->
     <div class="container">
        <!-- About items -->
@@ -118,7 +119,7 @@
       <div class="divider"></div>
          <div class="input-group mb-3">
             <div class="input-group">
-            <input type="submit" class="btn btn-success" value="Отправить">
+            <input type="submit" class="btn btn-success" name="crtObj" value="Отправить">
             <a href="/serf" class="btn btn-danger" style="margin-left: 16px">Отмена</a>
         </div>
       </div>
