@@ -26,7 +26,7 @@
 
         placemark = new ymaps.Placemark([53.35005, 83.75985], {
             hintContent: 'Первый проект',
-            balloonContent: '<div class="title"><img src = "./tamplate/img/174150_603x354.jpg" hspsce = "10px" width = "100%" height = "auto"><p>Очень важный общественный проект</p></div><div class="progress" style = "opacity: 0.7;"><div style = "width:100%; font-size: 15px; text-align:center; position : absolute; color: black">10 000/60 000</div><div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div><div class="owerview">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a</div><button type = "button" class = "btn btn-primary w-100">Поддержать проект!</button>'
+            balloonContent: '<div class="title"><img src = "./tamplate/img/174150_603x354.jpg" hspsce = "10px" width = "100%" height = "auto"><p>Очень важный общественный проект</p></div><div class="progress" style = "opacity: 0.7; position:relative"><div style = "width:100%; font-size: 15px; text-align:center; position : absolute; top:0; color: black">10 000/60 000</div><div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div><div class="owerview">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a</div><button type = "button" class = "btn btn-primary w-100">Поддержать проект!</button>'
         });
 
         map.geoObjects.add(placemark);
@@ -42,6 +42,7 @@
 
   map.events.add('contextmenu', function(ev) {
     var coords = ev.get('coords');
+    $("#location").val(coords);
    // alert(coords.join(', '));
      // ev объект с данными о событии (MouseEvent, в данном случае)
                   
@@ -61,13 +62,10 @@
                         left: event.pageX+'px', // Задаем позицию меню на X
                         top: event.pageY+'px' // Задаем позицию меню по Y
                     })
-                    .appendTo('body') // Присоединяем наше меню к body документа:
+                    .appendTo('#formlocation') // Присоединяем наше меню к body документа:
                     .append( // Добавляем пункты меню:
-<<<<<<< HEAD
-                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="create">Создать</a></li>') 
-=======
-                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="serf/create">Создать объект</a></li>')
->>>>>>> 8922a04ccc2c952bc6ba6c1a5466c59744a51b30
+
+                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><input type = "submit" class = "btn btn-link" value = "Создать движуху"></li>') 
                                   .append('<li class="list-group-item"><a href="#">Показать случайный проект</a></li>')
                                   .append('<li class="list-group-item"><a href="#">Фильтр</a></li>')
                            )
@@ -112,7 +110,8 @@
 </style>
  	<div class = "row">
 		<nav id ="sidebar" class = "col-md-3 col-sm-4" style = "text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.8); z-index: 10; padding:0">
-			<div class="face_icon" style="text-align: center; font-size: 50px;">
+     
+      <div class="face_icon" style="text-align: center; font-size: 50px;">
 				<i class="fas fa-user-circle"></i>
 			</div>
 			<ul class="list-group" >
@@ -124,15 +123,18 @@
 		</nav>
   
 		<div class = "col-md-9 col-sm-8" style="padding:0">
-				  <div id="map" style="width:100%; height:97.5vh; min-height: 99%">
-					  <span class="dg-zoom__hide" title="Скрыть меню">
-						  <div id ="sidebarCollapse"  onclick="collapse()"  class="dg-zoom__button_type_hide">
-							  <i class="fas fa-bars"></i>
-						  </div>
-					  </span>
+    <div id="map" style="width:100%; height:97.5vh; min-height: 99%">
+			  <span class="dg-zoom__hide" title="Скрыть меню">
+				  <div id ="sidebarCollapse"  onclick="collapse()"  class="dg-zoom__button_type_hide">
+					  <i class="fas fa-bars"></i>
 				  </div>
+			  </span>
+		  </div>
 		</div>
   </div>
+  <form method="post" action="/create" id="formlocation">
+    <input type="hidden" name="location" id="location">
+  </form>
 	<!-- Подключаем jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Подключаем плагин Popper -->
