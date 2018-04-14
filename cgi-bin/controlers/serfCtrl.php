@@ -2,7 +2,7 @@
 /**
 * Серфинг, создание и просмотр объектов
 */
-include_once(ROOT. '/models/Serf.php');
+include_once(ROOT. '/vews/Serf.php');
 class serfCtrl
 {
   public function indexAct()
@@ -24,7 +24,7 @@ class serfCtrl
                  }
                  else
                  {
-                    $create = Serf::createSerf($_POST);
+                    
                  }
                }
     include_once(ROOT. '/vews/create.php');

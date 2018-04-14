@@ -66,7 +66,7 @@
                     })
                     .appendTo('body') // Присоединяем наше меню к body документа:
                     .append( // Добавляем пункты меню:
-                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="create">Создать</a></li>') 
+                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="serf/create">Создать</a></li>') 
                                   .append('<li class="list-group-item"><a href="#">Показать случайный проект</a></li>')
                                   .append('<li class="list-group-item"><a href="#">Фильтр</a></li>') 
                            )

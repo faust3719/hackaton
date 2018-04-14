@@ -33,7 +33,7 @@
       <?php
         print_r($_POST);
       ?>
-  <form method = "post" action="/create" style="margin-top: 10px">
+  <form method = "post" action="serf/create" style="margin-top: 10px">
      <!-- Page items -->
     <div class="container">
        <!-- About items -->

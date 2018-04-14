@@ -27,12 +27,14 @@ class Router
 
 				$internalRoute = preg_replace("~$keyuri~", $path, $uri);
 
+
+
 				$segments = explode('/', $internalRoute);
-			
-				$contNme = array_shift($segments).'Ctrl';
-			
+
+				$contNme = lcfirst($modlNme).'Ctrl';
+
 				$actNme = array_shift($segments).'Act';
-				
+
 				$parametr = $segments;
 
 				$crtlFile = ROOT . '/controlers/' . $contNme . '.php';
