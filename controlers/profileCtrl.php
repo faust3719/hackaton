@@ -42,13 +42,13 @@ class profileCtrl
 		else :
 			$login = htmlspecialchars($_POST['login']);
 			$password = sha1(htmlspecialchars($_POST['pass']));
-			$data = db::dbSelect("SELECT user.login, user.email, user.auth FROM user WHERE user.login = '$login' AND user.pass = '$password'");
+			$data = db::dbSelect("SELECT user.login, user.email, user.auth FROM user WHERE user.login = '$login' AND user.pass = '$password'")[0];
 			if (count($data)>0){
 				$_SESSION['auth']=$data['auth'];
-				header("/serf");
+				header("Location: /serf");
 			}
 			else {
-				header("/log");
+				header("Location: /log");
 			}
 		endif;
 		return true;
