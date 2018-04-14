@@ -31,6 +31,7 @@
     
       </nav>
       <?php
+	  if (count($_POST)!=0)
         print_r($_POST);
       ?>
   <form method = "post" action="serf/create" style="margin-top: 10px" enctype="multipart/form-data">
@@ -88,14 +89,14 @@
               </div>
               <select class="custom-select" id="inputGroupSelect01" name ="theme">
                 <option selected>Выберите тематику</option>
-                <option value="1">Мастер-класс</option>
-                <option value="2">Концерт</option>
-                <option value="3">Игра</option>
-                <option value="4">Мероприятие</option>
-                <option value="5">Презентация</option>
-                <option value="6">Выставка</option>
-                <option value="7">Конференция</option>
-                <option value="8">Туризм</option>
+				  <?php
+				  $data = db::dbSelect('SELECT theme.* FROM theme');
+				  foreach ($data as $value):
+				  ?>
+                <option value="<?=$value['id']?>"><?=$value['name']?></option>
+				  <?php
+				  endforeach;
+				  ?>
               </select>
             </div>
           <div class="input-group mb-3">
@@ -118,7 +119,7 @@
          <div class="input-group mb-3">
             <div class="input-group">
             <input type="submit" class="btn btn-success" value="Отправить">
-            <a href="/serf" class="btn btn-danger">Отмена</a>
+            <a href="/serf" class="btn btn-danger" style="margin-left: 16px">Отмена</a>
         </div>
       </div>
     </div>
