@@ -15,15 +15,18 @@ class serfCtrl
     $serf = new Serf();
     $data = $serf->getSerf($params);
     include_once(ROOT. '/vews/view.php');
-    return true;  
+    return true;
   }
   public function createAct()
   {
                if (!empty($_POST) && isset($_POST['crtObj'])) {
-                 if (empty($_POST['headler']) || empty($_POST['theme']) || empty($_POST['about']) || empty($_POST['date_start']) || empty($_POST['date_end'])|| empty($_POST['time_start']) || empty($_POST['time_end'])) {
+                 if (empty($_POST['headler']) || empty($_POST['theme']) ||
+	                 empty($_POST['about']) || empty($_POST['date_start']) ||
+	                 empty($_POST['date_end'])|| empty($_POST['time_start']) ||
+	                 empty($_POST['time_end'])) {
                     $error = "nowr";
                    include_once(ROOT. '/vews/create.php');
-                   return true;  
+                   return true;
                  }
                  else
                  {
@@ -33,7 +36,7 @@ class serfCtrl
                  }
                }
     include_once(ROOT. '/vews/create.php');
-                return true;  
+                return true;
   }
 
 

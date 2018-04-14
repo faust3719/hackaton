@@ -41,7 +41,7 @@ class profileCtrl
 			header("Location: /serf");
 		else :
 			$login = htmlspecialchars($_POST['login']);
-			$password = sha1(htmlspecialchars($_POST['password']));
+			$password = sha1(htmlspecialchars($_POST['pass']));
 			$data = db::dbSelect("SELECT user.login, user.email, user.auth FROM user WHERE user.login = '$login' AND user.pass = '$password'");
 			if (count($data)>0){
 				$_SESSION['auth']=$data['auth'];

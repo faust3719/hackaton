@@ -28,7 +28,7 @@
 				<div class="col-1"></div>
 			<div class="tab-content" id="regTabCont">
 				<div class="tab-pane <? if (!isset($_GET['reg'])):?>show active <? else : ?>fade  <?endif;?>" id="enter">
-					<form id="en">
+					<form id="en" method="post" action="/uservalidation">
 						<div class="row">
 						<div class="col-1"></div>
 							<div class="form-group col-10">
@@ -40,7 +40,7 @@
 										<input type="password" name="pass" class="input-group-item form-control" placeholder="Введите пароль" required>
 									</div>
 									<div class="col-12">
-										<button type = "button" class="btn btn-primary input-group-item w-100">Вход</button>
+										<button type = "submit" class="btn btn-primary input-group-item w-100">Вход</button>
 									</div>
 								</span>
 							</div>
