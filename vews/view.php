@@ -10,7 +10,7 @@
       <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <style>
    p {
-    text-indent: 20px; /* Отступ первой строки в пикселах */
+    text-indent: 20px;
    }
   </style>
     <title>Create</title>
@@ -32,10 +32,10 @@
       </div>
     </div>
   </nav>
-       <div class="container">
+       <div class="container m-3">
           <div class="jumbotron row">
           <?php 
-            if(!empty($data['prepayment']))
+            if(!empty($data['prepayment']) || $data['prepayment'] != 0)
             {
           ?>
           <div class="col-3">
@@ -61,7 +61,7 @@
             <p class="lead"><?php echo $data['short_description']; ?>
           </div>
           <div class="col-6">
-            <img style="width: 100%" src="<?php echo $data['photo']; ?>">
+            <img style="width: 100%; max-height: 500px" src="<?php echo $data['photo']; ?>">
           </div>          
           <p>Собираемся: 
             <?php
