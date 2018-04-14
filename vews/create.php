@@ -59,24 +59,6 @@
 					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
 				</div>
 				<input type="number" class="form-control" name = "zena_pre" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre'])) echo $_POST['zena_pre']?>">
-			</div><div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1">Цена</span>
-				</div>
-				<input type="number" class="form-control" name = "zena_post2" value="<?php if (!empty($_POST['zena_post2'])) echo $_POST['zena_post2']?>">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
-				</div>
-				<input type="number" class="form-control" name = "zena_pre2" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre2'])) echo $_POST['zena_pre2']?>">
-			</div><div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1">Цена</span>
-				</div>
-				<input type="number" class="form-control" name = "zena_pos3" value="<?php if (!empty($_POST['zena_post3'])) echo $_POST['zena_post3']?>">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1">Цена предоплаты</span>
-				</div>
-				<input type="number" class="form-control" name = "zena_pre3" placeholder="Если есть" value="<?php if (!empty($_POST['zena_pre3'])) echo $_POST['zena_pre3']?>">
 			</div>
 
           <div class="input-group mb-3">

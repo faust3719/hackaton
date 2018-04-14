@@ -51,5 +51,40 @@ class profileCtrl
 				header("/log");
 			}
 		endif;
+		return true;
+	}
+	
+	public function fastregAct(){
+		$user=$_SESSION['auth'];
+		$event=$_POST['idFast'];
+		$auth=$_SESSION['auth'];
+		$user=db::dbSelect("SELECT user.id FROM user WHERE user.auth = '$user'")[0]['id'];
+		db::dbInsert("INSERT INTO going (event, user) VALUES ('$event', '$user')");
+		
+	   $eventData=db::dbSelect("SELECT * FROM event")[0];
+	   if ($eventData['price']>0)
+	   echo '<form id="payment" name="payment" method="post" action="https://sci.interkassa.com/" enctype="utf-8">
+		   <input type="hidden" name="ik_co_id" value="5ad226a93c1eaff7608b4568" />
+		   <input type="hidden" name="ik_pm_no" value="'.time().'" />
+		   <input type="hidden" name="ik_am" value="'.$eventData['price'].'" />
+		   <input type="hidden" name="ik_cur" value="RUB" />
+		   <input type="hidden" name="ik_desc" value="'.$eventData['title'].'" />
+		   <input type="hidden" name="ik_suc_u" value="http://alexandrburnmind.lh1.in/paysuc" />
+		   <input type="hidden" name="ik_suc_m" value="post" />
+		   <input type="hidden" name="ik_exp" value="2018-04-15" />
+		   <input type="text" name="ik_x_idUser" value="'.$user.'" />
+		   <input type="text" name="ik_x_idEvent" value="'.$event.'" />
+		   <input type="submit" value="Pay">
+	   </form>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	   <script>
+	   $(window).ready(function(){ '."$('#payment').submit()".' })</script>';
+		
+		return true;
+	}
+	
+	public function paysucAct(){
+		echo 'Оплата успешна вы зарегистриваны';		return true;
+		
 	}
 }

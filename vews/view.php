@@ -34,8 +34,13 @@
   </nav>
        <div class="container m-3">
           <div class="jumbotron row">
+<<<<<<< HEAD
           <?php 
             if(!empty($data['prepayment']) || $data['prepayment'] != 0)
+=======
+          <?php
+            if(!empty($data['prepayment']))
+>>>>>>> 472b0de9dcb55e4084dfcaff07da7419044547ce
             {
           ?>
           <div class="col-3">
@@ -43,17 +48,17 @@
           </div>
           <?php } ?>
           <div class="col-3">
-          <span style="">Цена: <?php echo $data['price']; ?></span>  
+          <span style="">Цена: <?php echo $data['price']; ?></span>
           </div>
             <div class="col-3">
-              <span> 
+              <span>
               <?php
                   echo $data['min_count'] . '/' . $data['count'];
               ?>
               </span>
             </div>
 
-          <div class="col-12">  
+          <div class="col-12">
             <h1><?php echo $data['title']; ?></h1>
           </div>
           <div class="col-6">
@@ -61,25 +66,31 @@
             <p class="lead"><?php echo $data['short_description']; ?>
           </div>
           <div class="col-6">
+<<<<<<< HEAD
             <img style="width: 100%; max-height: 500px" src="<?php echo $data['photo']; ?>">
           </div>          
           <p>Собираемся: 
+=======
+            <img style="width: 100%" src="<?php echo $data['photo']; ?>">
+          </div>
+          <p>Собираемся:
+>>>>>>> 472b0de9dcb55e4084dfcaff07da7419044547ce
             <?php
                 echo $data['start_date'];
             ?>
           </p>
-          <p>Время сбора: 
+          <p>Время сбора:
             <?php
               echo substr($data['start_time'], 0, 5);
             ?>
           </p>
-          <p>Окончание: 
+          <p>Окончание:
             <?php
               echo $data['end_date'] . " в " . substr($data['end_time'], 0, 5);
             ?>
           </p>
           
-          <p>Место сбора: 
+          <p>Место сбора:
             <?php
               echo $data['place'];
             ?>
