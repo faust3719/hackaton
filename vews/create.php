@@ -34,11 +34,7 @@
 	  if (count($_POST)!=0)
         print_r($_POST);
       ?>
-<<<<<<< HEAD
-  <form method = "post" action="/create" style="margin-top: 10px">
-=======
-  <form method = "post" action="serf/create" style="margin-top: 10px" enctype="multipart/form-data">
->>>>>>> 8922a04ccc2c952bc6ba6c1a5466c59744a51b30
+  <form method = "post" action="/create" style="margin-top: 10px" enctype="multipart/form-data">
      <!-- Page items -->
     <div class="container">
        <!-- About items -->

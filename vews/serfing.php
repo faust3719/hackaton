@@ -63,11 +63,7 @@
                     })
                     .appendTo('body') // Присоединяем наше меню к body документа:
                     .append( // Добавляем пункты меню:
-<<<<<<< HEAD
-                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="create">Создать</a></li>') 
-=======
-                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="serf/create">Создать объект</a></li>')
->>>>>>> 8922a04ccc2c952bc6ba6c1a5466c59744a51b30
+                        $('<ul>', {class: "list-group-item"}).append('<li class="list-group-item"><a href="create">Создать</a></li>')
                                   .append('<li class="list-group-item"><a href="#">Показать случайный проект</a></li>')
                                   .append('<li class="list-group-item"><a href="#">Фильтр</a></li>')
                            )
@@ -111,17 +107,9 @@
 }
 </style>
  	<div class = "row">
-		<nav id ="sidebar" class = "col-md-3 col-sm-4" style = "text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.8); z-index: 10; padding:0">
-			<div class="face_icon" style="text-align: center; font-size: 50px;">
-				<i class="fas fa-user-circle"></i>
-			</div>
-			<ul class="list-group" >
-				<a href="#"><li class="list-group-item">Профиль</li></a>
-				<a href="#"><li class="list-group-item">Настройки</li></a>
-				<a href="#"><li class="list-group-item">Мои проекты</li></a>
-				<a href="#"><li class="list-group-item">Мои донаты</li></a>
-			</ul>
-		</nav>
+		<?
+		include 'sidebar.php';
+		?>
   
 		<div class = "col-md-9 col-sm-8" style="padding:0">
 				  <div id="map" style="width:100%; height:97.5vh; min-height: 99%">

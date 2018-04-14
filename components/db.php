@@ -31,4 +31,11 @@ class db
 		endwhile;
 		return $value;
 	}
+	
+	static function dbInsert($sql){
+		$db=db::connect();
+		$data=$db->prepare($sql);
+		$data->execute();
+	}
+	
 }
