@@ -31,7 +31,7 @@
 			placemark = new ymaps.Placemark([<?=$item['location']?>], {
 			hintContent: '<?=$item['title']?>',
 			balloonContent: '<a href = "/view/<?=$item['id']?>" style = "cursor: pointer; text-decoration: none; color: black">' +
-			'<div class="title"><img src = "<?=$item['photo']?>" hspsce = "10px" width = "100%" height = "auto">' +
+			'<div class="title"><img src = "<?=$item['photo']?>" hspsce = "10px" width = "auto" style ="max-height: 300px" height = "auto">' +
 			'<h3><?=$item['short_description']?></h3></div>' +
 			'<div class="owerview"><?=$item['description']?></div></a>' +
 			'<div class="owerview">Цена: <?=$item['price']?> руб.</div></a>' +

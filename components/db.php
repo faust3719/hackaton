@@ -7,7 +7,7 @@ class db
 	
 	static function connect()
 	{
-		$host = '100.124.160.197';
+		$host = 'baralt.ru';
 		$dbname ='hackaton';
 		$password = '';
 		$user = 'root';

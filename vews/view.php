@@ -34,16 +34,11 @@
   </nav>
        <div class="container m-3">
           <div class="jumbotron row">
-<<<<<<< HEAD
           <?php 
             if(!empty($data['prepayment']) || $data['prepayment'] != 0)
-=======
-          <?php
-            if(!empty($data['prepayment']))
->>>>>>> 472b0de9dcb55e4084dfcaff07da7419044547ce
             {
           ?>
-          <div class="col-3">
+          <div class="col-4">
             <span style="font-size:20px">Цена по предоплате: <?php echo $data['prepayment']; ?></span>
           </div>
           <?php } ?>
@@ -62,19 +57,18 @@
             <h1><?php echo $data['title']; ?></h1>
           </div>
           <div class="col-6">
-            <p><button class="btn btn-lg btn-success">Я пойду!</button></p>
+            <p>
+              <form action="/fastreg" method="POST">
+      <input type="hidden" value="<?=$data['id']?>" name="idFast" />
+      <button type = "submit" class = "btn btn-primary w-100">Я пойду!</button></form>
+            </p>
             <p class="lead"><?php echo $data['short_description']; ?>
           </div>
           <div class="col-6">
-<<<<<<< HEAD
-            <img style="width: 100%; max-height: 500px" src="<?php echo $data['photo']; ?>">
+            <img style="right: 0; width: auto; max-height: 300px" src="<?php echo $data['photo']; ?>">
           </div>          
           <p>Собираемся: 
-=======
-            <img style="width: 100%" src="<?php echo $data['photo']; ?>">
-          </div>
-          <p>Собираемся:
->>>>>>> 472b0de9dcb55e4084dfcaff07da7419044547ce
+
             <?php
                 echo $data['start_date'];
             ?>
