@@ -71,7 +71,7 @@ class profileCtrl
 		   <input type="hidden" name="ik_desc" value="'.$eventData['title'].'" />
 		   <input type="hidden" name="ik_suc_u" value="http://alexandrburnmind.lh1.in/paysuc" />
 		   <input type="hidden" name="ik_suc_m" value="post" />
-		   <input type="hidden" name="ik_exp" value="2018-04-15" />
+		   <input type="hidden" name="ik_exp" value="2018-06-15" />
 		   <input type="text" name="ik_x_idUser" value="'.$user.'" />
 		   <input type="text" name="ik_x_idEvent" value="'.$event.'" />
 		   <input type="submit" value="Pay">
