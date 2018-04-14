@@ -34,7 +34,7 @@
   </nav>
        <div class="container">
           <div class="jumbotron row">
-          <?php 
+          <?php
             if(!empty($data['prepayment']))
             {
           ?>
@@ -43,17 +43,17 @@
           </div>
           <?php } ?>
           <div class="col-3">
-          <span style="">Цена: <?php echo $data['price']; ?></span>  
+          <span style="">Цена: <?php echo $data['price']; ?></span>
           </div>
             <div class="col-3">
-              <span> 
+              <span>
               <?php
                   echo $data['min_count'] . '/' . $data['count'];
               ?>
               </span>
             </div>
 
-          <div class="col-12">  
+          <div class="col-12">
             <h1><?php echo $data['title']; ?></h1>
           </div>
           <div class="col-6">
@@ -62,24 +62,24 @@
           </div>
           <div class="col-6">
             <img style="width: 100%" src="<?php echo $data['photo']; ?>">
-          </div>          
-          <p>Собираемся: 
+          </div>
+          <p>Собираемся:
             <?php
                 echo $data['start_date'];
             ?>
           </p>
-          <p>Время сбора: 
+          <p>Время сбора:
             <?php
               echo substr($data['start_time'], 0, 5);
             ?>
           </p>
-          <p>Окончание: 
+          <p>Окончание:
             <?php
               echo $data['end_date'] . " в " . substr($data['end_time'], 0, 5);
             ?>
           </p>
           
-          <p>Место сбора: 
+          <p>Место сбора:
             <?php
               echo $data['place'];
             ?>

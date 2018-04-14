@@ -27,13 +27,17 @@
 		$data=Serf::getSerfMap();
 	    foreach ($data as $item)
 	    {
-			?>placemark = new ymaps.Placemark([<?=$item['location']?>], {
+			?>
+			placemark = new ymaps.Placemark([<?=$item['location']?>], {
 			hintContent: '<?=$item['title']?>',
 			balloonContent: '<a href = "/view/<?=$item['id']?>" style = "cursor: pointer; text-decoration: none; color: black">' +
 			'<div class="title"><img src = "<?=$item['photo']?>" hspsce = "10px" width = "100%" height = "auto">' +
 			'<h3><?=$item['short_description']?></h3></div>' +
 			'<div class="owerview"><?=$item['description']?></div></a>' +
-			'<button type = "button" class = "btn btn-primary w-100">Я пойду!</button>'
+			'<div class="owerview">Цена: <?=$item['price']?> руб.</div></a>' +
+			'<form action="/fastreg" method="POST">' +
+			'<input type="hidden" value="<?=$item['id']?>" name="idFast" />' +
+			'<button type = "submit" class = "btn btn-primary w-100">Я пойду!</button></form>'
 		});
 			map.geoObjects.add(placemark);
 
