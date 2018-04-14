@@ -26,7 +26,7 @@ class Router
 			if (preg_match("~$keyuri~", $uri)) {
 
 				$internalRoute = preg_replace("~$keyuri~", $path, $uri);
-
+			
 				$segments = explode('/', $internalRoute);
 			
 				$contNme = array_shift($segments).'Ctrl';

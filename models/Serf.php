@@ -6,14 +6,14 @@ class Serf
 {
 	public static function getSerf($id = NULL)
 	{
-		$id = array_shift($id);
+		/*$id = array_shift($id);
 		$query = 'SELECT * FROM `hackaton`.`event` WHERE `id` =' . $id;
 		$query = db::dbSelect($query);
-		return $query;
+		return $query;*/
 	}
 	public static function getSerfMap()
 	{
-		$query = 'SELECT * FROM `hackaton`.`event`';
+		$query = 'SELECT * FROM event';
 		$query = db::dbSelect($query);
 		return $query;
 	}

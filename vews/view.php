@@ -8,7 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
       <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
- 
+  <style>
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+  </style>
     <title>Create</title>
   </head>
   <body>
@@ -28,14 +32,76 @@
       </div>
     </div>
   </nav>
-   <div id="about">
+       <div class="container">
+          <div class="jumbotron row">
+          <?php 
+            if(!empty($data['prepayment']))
+            {
+          ?>
+          <div class="col-3">
+            <span style="font-size:20px">Цена по предоплате: <?php echo $data['prepayment']; ?></span>
+          </div>
+          <?php } ?>
+          <div class="col-3">
+          <span style="">Цена: <?php echo $data['price']; ?></span>  
+          </div>
+            <div class="col-3">
+              <span> 
+              <?php
+                  echo $data['min_count'] . '/' . $data['count'];
+              ?>
+              </span>
+            </div>
 
-        
-    <?php
-        print_r($data);
-    ?>
-    
+          <div class="col-12">  
+            <h1><?php echo $data['title']; ?></h1>
+          </div>
+          <div class="col-6">
+            <p><button class="btn btn-lg btn-success">Я пойду!</button></p>
+            <p class="lead"><?php echo $data['short_description']; ?>
+          </div>
+          <div class="col-6">
+            <img style="width: 100%" src="<?php echo $data['photo']; ?>">
+          </div>          
+          <p>Собираемся: 
+            <?php
+                echo $data['start_date'];
+            ?>
+          </p>
+          <p>Время сбора: 
+            <?php
+              echo substr($data['start_time'], 0, 5);
+            ?>
+          </p>
+          <p>Окончание: 
+            <?php
+              echo $data['end_date'] . " в " . substr($data['end_time'], 0, 5);
+            ?>
+          </p>
+          
+          <p>Место сбора: 
+            <?php
+              echo $data['place'];
+            ?>
+          </p>
+        </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <div id="about">
+            <h4><?php echo $data['title']; ?></h4>
+            <p><?php echo $data['description']; ?></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; Тиньгаева и Ко)</p>
+      </div>
+
     </div>
+
+    
       <!-- Подключаем jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Подключаем плагин Popper -->
