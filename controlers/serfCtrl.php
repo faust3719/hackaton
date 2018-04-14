@@ -4,7 +4,6 @@
 */
 class serfCtrl
 {
-  
   public function indexAct()
   {
     include_once(ROOT. '/vews/serfing.php');
@@ -14,7 +13,7 @@ class serfCtrl
   {
     
   }
-        public function createAct()
+  public function createAct()
   {
                if (!empty($_POST)) {
                  if (empty($_POST['headler']) || empty($_POST['theme']) || empty($_POST['about']) || empty($_POST['date_start']) || empty($_POST['date_end'])|| empty($_POST['time_start']) || empty($_POST['time_end'])) {
@@ -24,7 +23,7 @@ class serfCtrl
                  }
                  else
                  {
-
+                    
                  }
                }
     include_once(ROOT. '/vews/create.php');

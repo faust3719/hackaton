@@ -26,7 +26,9 @@ class Router
 			if (preg_match("~$keyuri~", $uri)) {
 				$segments = explode('/', $path);
 
-				$contNme = array_shift($segments).'Ctrl';
+				$modlNme = ucfirst(array_shift($segments));
+
+				$contNme = lcfirst($modlNme).'Ctrl';
 
 				$actNme = array_shift($segments).'Act';
 
@@ -35,7 +37,15 @@ class Router
 				if (file_exists($crtlFile)) {
 					include_once ($crtlFile);
 				}
+				
+				$modelFile = ROOT . '/models/' . $modlNme . '.php';
 
+				if (file_exists($modelFile)) {
+					include_once ($modelFile);
+				}
+
+				$modlObj = new $modlNme;
+				
 				$contObj = new $contNme;
 				$rez = $contObj->$actNme();
 				if ($rez != NULL) {

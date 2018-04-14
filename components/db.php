@@ -1,14 +1,14 @@
 <?php
 /**
-*
+* 
 */
 class db
 {
 	
 	function connect()
 	{
-		$host = 'localhost';
-		$dbname ='create';
+		$host = '100.124.160.197';
+		$dbname ='hackaton';
 		$password = '';
 		$user = 'root';
 		
