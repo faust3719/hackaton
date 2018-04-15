@@ -27,6 +27,12 @@ class profileCtrl
 		return true;
 	}
 	
+	public function profileAct()
+	{
+		include_once(ROOT. '/vews/profile.php');
+		return true;
+	}
+	
 	public function validateAct(){
 		if (isset($_POST['email'])):
 			$login = htmlspecialchars($_POST['login']);
