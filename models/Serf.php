@@ -36,7 +36,7 @@ class Serf
 		$uploadfile = $uploaddir . basename($_FILES['photo']['name']);
 		$auth=$_SESSION['auth'];
 		$id=db::dbSelect("SELECT user.id FROM user WHERE user.auth = '$auth'")[0]['id'];
-            db::dbInsert("INSERT INTO event (id, user, status, theme, title, price, prepayment, start_date, start_time, end_date, end_time, min_count, short_description, description, photo, rating, durability, place, location) VALUES (DEFAULT, '$id', '1', '$theme', '$title', '$zena_post', '$zena_pre', '$zena_post2', '$zena_pre2', '$zena_post3', '$zena_pre3', '$date_start', '$time_start', '$date_end', '$time_end', '$pipl_num', '$comment', '$about', '$uploadfile', '0', DEFAULT , '$adress', '$location')");
+            db::dbInsert("INSERT INTO event (id, user, status, theme, title, price, prepayment, start_date, start_time, end_date, end_time, min_count, short_description, description, photo, rating, durability, place, location) VALUES (DEFAULT, '$id', '1', '$theme', '$title', '$zena_post', '$zena_pre', '$date_start', '$time_start', '$date_end', '$time_end', '$pipl_num', '$comment', '$about', '$uploadfile', '0', DEFAULT , '$adress', '$location')");
 		
 		$uploadfile = "." . $uploadfile;
 		move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile);
