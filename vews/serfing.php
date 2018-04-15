@@ -16,7 +16,8 @@
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
       <script type="text/javascript">
              ymaps.ready(init);
-    var map, placemark;
+    var map;
+    
 
     function init(){
         map = new ymaps.Map("map", {
@@ -25,10 +26,14 @@
         });
 		<?
 		$data=Serf::getSerfMap();
+    $i = 0;
 	    foreach ($data as $item)
 	    {
+        
+        echo $i;
 			?>
-			placemark = new ymaps.Placemark([<?=$item['location']?>], {
+
+			var placemark<?php echo $i; ?> = new ymaps.Placemark([<?=$item['location']?>], {
 			hintContent: '<?=$item['title']?>',
 			balloonContent: '<a href = "/view/<?=$item['id']?>" style = "cursor: pointer; text-decoration: none; color: black">' +
 			'<div class="title"><img src = "<?=$item['photo']?>" hspsce = "10px" width = "auto" style ="max-height: 300px" height = "auto">' +
@@ -39,10 +44,10 @@
 			'<input type="hidden" value="<?=$item['id']?>" name="idFast" />' +
 			'<button type = "submit" class = "btn btn-primary w-100">Я пойду!</button></form>'
 		});
-			map.geoObjects.add(placemark);
+			map.geoObjects.add(placemark<?php echo $i; ?>);
 
 	<?
-		}
+		$i++;}
 		?>
 
   
@@ -57,6 +62,7 @@
 
   map.events.add('contextmenu', function(ev) {
     var coords = ev.get('coords');
+   
     $("#location").val(coords);
    // alert(coords.join(', '));
      // ev объект с данными о событии (MouseEvent, в данном случае)
@@ -125,6 +131,7 @@
 </style>
  	<div class = "row">
 		<?
+    print_r($data);
 		include 'sidebar.php';
 		?>
   

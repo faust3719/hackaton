@@ -65,10 +65,9 @@
             <p class="lead"><?php echo $data['short_description']; ?>
           </div>
           <div class="col-6">
-            <img style="right: 0; width: auto; max-height: 300px" src="<?php echo $data['photo']; ?>">
+            <img style="width: auto; max-height: 300px" src="<?php echo $data['photo']; ?>">
           </div>          
           <p>Собираемся: 
-
             <?php
                 echo $data['start_date'];
             ?>
