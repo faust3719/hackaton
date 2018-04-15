@@ -22,7 +22,7 @@
     function init(){
         map = new ymaps.Map("map", {
              center: [53.35005, 83.75985],
-             zoom: 15
+             zoom: 12
         });
 		<?
 		$data=Serf::getSerfMap();

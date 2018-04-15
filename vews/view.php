@@ -34,7 +34,7 @@
   </nav>
        <div class="container m-3">
           <div class="jumbotron row">
-          <?php 
+          <?php
             if(!empty($data['prepayment']) || $data['prepayment'] != 0)
             {
           ?>
@@ -65,9 +65,16 @@
             <p class="lead"><?php echo $data['short_description']; ?>
           </div>
           <div class="col-6">
+<<<<<<< HEAD
             <img style="width: auto; max-height: 300px" src="<?php echo $data['photo']; ?>">
           </div>          
           <p>Собираемся: 
+=======
+            <img style="right: 0; width: auto; max-height: 300px" src="<?php echo $data['photo']; ?>">
+          </div>
+          <p>Собираемся:
+
+>>>>>>> 9b83a8f2074dc6fcb99665d5c1f4b678e23dfe7f
             <?php
                 echo $data['start_date'];
             ?>

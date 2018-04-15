@@ -100,7 +100,7 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="basic-addon1">Адрес *</span>
 				</div>
-				<input type="text" class="form-control" name = "adress" value="<?php if (!empty($_POST['adress'])) echo $_POST['adress']?>">
+				<input type="text" class="form-control" name = "adress" value="<?php if (!empty($_POST['adress'])) echo $_POST['adress']?>" required>
 			</div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
