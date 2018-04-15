@@ -131,8 +131,7 @@
 </style>
  	<div class = "row">
 		<?
-    print_r($data);
-		include 'sidebar.php';
+		  include 'sidebar.php';
 		?>
   
 		<div class = "col-md-9 col-sm-8" style="padding:0">
