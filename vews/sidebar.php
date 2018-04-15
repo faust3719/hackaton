@@ -9,8 +9,8 @@
 	<ul class="list-group" >
 		<a href="/profile"><li class="list-group-item">Профиль</li></a>
 		<a href="#"><li class="list-group-item">Настройки</li></a>
-		<a href="/project"><li class="list-group-item">Мои проекты</li></a>
-		<a href="/going"><li class="list-group-item">Мои донаты</li></a>
+		<a href="/profile"><li class="list-group-item">Мои проекты</li></a>
+		<a href="/profile"><li class="list-group-item">Мои донаты</li></a>
 	</ul>
 	<?
 	else :
