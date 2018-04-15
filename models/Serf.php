@@ -31,7 +31,7 @@ class Serf
 		$comment=htmlspecialchars($_POST['comment']);
 		$about=htmlspecialchars($_POST['about']);
 		$adress=htmlspecialchars($_POST['adress']);
-		$pipl_num=htmlspecialchars($_POST['pipl_num']);
+		$pipl_num=empty($_POST['pipl_num']) ? null : htmlspecialchars($_POST['pipl_num']);
 		$uploaddir = '/image/event/';
 		$uploadfile = $uploaddir . basename($_FILES['photo']['name']);
 		$auth=$_SESSION['auth'];
