@@ -4,7 +4,7 @@
 		<i class="fas fa-user-circle"></i>
 	</div>
 	<?
-	if (isset($_SESSION['auth'])) :
+	if (!empty($_SESSION['auth'])) :
 	?>
 	<ul class="list-group" >
 		<a href="/profile"><li class="list-group-item">Профиль</li></a>

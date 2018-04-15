@@ -68,7 +68,7 @@ class profileCtrl
 		db::dbInsert("INSERT INTO going (event, user) VALUES ('$event', '$user')");
 		
 	   $eventData=db::dbSelect("SELECT * FROM event")[0];
-	   if ($eventData['price']>0)
+	   if ($eventData['price']>0):
 	   echo '<form id="payment" name="payment" method="post" action="https://sci.interkassa.com/" enctype="utf-8">
 		   <input type="hidden" name="ik_co_id" value="5ad226a93c1eaff7608b4568" />
 		   <input type="hidden" name="ik_pm_no" value="'.time().'" />
@@ -86,6 +86,9 @@ class profileCtrl
 	   <script>
 	   $(window).ready(function(){ '."$('#payment').submit()".' })</script>';
 		
+		else :
+		   header('Location: /profile');
+endif;
 		return true;
 	}
 	
