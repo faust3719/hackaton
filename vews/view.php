@@ -48,7 +48,7 @@
             <div class="col-3">
               <span>
               <?php
-                  echo $data['min_count'] . '/' . $data['count'];
+                  echo $data['count'] . '/' . $data['min_count'];
               ?>
               </span>
             </div>
