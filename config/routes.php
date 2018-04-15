@@ -9,7 +9,7 @@
 				'fastreg' => 'profile/fastreg',
 				'auth' => 'profile/auth',
 				'reg' => 'profile/reg',
-				'paysuc' => 'profile/paysuc',
+				'paysuc' => 'profile/profile',
 				'' => 'serf/index'
 		);
 
