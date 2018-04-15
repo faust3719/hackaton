@@ -67,7 +67,7 @@ class profileCtrl
 		$user=db::dbSelect("SELECT user.id FROM user WHERE user.auth = '$user'")[0]['id'];
 		db::dbInsert("INSERT INTO going (event, user) VALUES ('$event', '$user')");
 		
-	   $eventData=db::dbSelect("SELECT * FROM event")[0];
+	   $eventData=db::dbSelect("SELECT * FROM event WHERE id=".$event)[0];
 	   if ($eventData['price']>0):
 	   echo '<form id="payment" name="payment" method="post" action="https://sci.interkassa.com/" enctype="utf-8">
 		   <input type="hidden" name="ik_co_id" value="5ad226a93c1eaff7608b4568" />
